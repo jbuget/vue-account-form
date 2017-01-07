@@ -42,4 +42,4 @@ heroku buildpacks:set heroku/nodejs
 npm run deploy
 ```
 
-The application is available at: 
+The application is available at: https://<application_name>.herokuapp.com/, such as [https://vue-account-form.herokuapp.com/](https://vue-account-form.herokuapp.com/).
