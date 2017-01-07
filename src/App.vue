@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <div class="overlay"></div>
+    <signup-form></signup-form>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello';
+import SignupForm from './components/SignupForm';
 
 export default {
   name: 'app',
   components: {
-    Hello,
+    SignupForm,
   },
 };
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+  .overlay {
+    background: radial-gradient(#40404b, #111118) rgba(34,34,40,0.94);
+    opacity: 0.9;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+  }
+
 </style>

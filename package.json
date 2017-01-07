@@ -14,7 +14,8 @@
     "deploy": "npm run build && git subtree push --prefix dist heroku master"
   },
   "dependencies": {
-    "vue": "^2.1.0"
+    "vue": "^2.1.0",
+    "vue-material": "^0.5.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
