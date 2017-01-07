@@ -25,3 +25,21 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Heroku Deployment
+
+``` bash
+# Create a new application no Heroku
+heroku create <application_name>
+
+# Add heroku Git remote repository
+heroku git:remote -a <application_name>
+
+# Configure Heroku buildpack
+heroku buildpacks:set heroku/nodejs
+
+# Build for production and push/deploy on Heroku
+npm run deploy
+```
+
+The application is available at: 
