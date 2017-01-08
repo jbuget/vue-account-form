@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <div class="overlay"></div>
-    <signup-form></signup-form>
+    <account-widget></account-widget>
   </div>
 </template>
 
 <script>
-import SignupForm from './components/SignupForm';
+import AccountWidget from './components/AccountWidget';
 
 export default {
   name: 'app',
   components: {
-    SignupForm,
+    AccountWidget,
   },
 };
 </script>

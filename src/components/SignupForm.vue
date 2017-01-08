@@ -1,27 +1,10 @@
 <template>
   <div class="signup-form">
-
-    <div class="signup-form__header">
-      <img class="signup-form__header__logo" src="../assets/logo.png">
-      <div class="signup-form__header__title">Vue.js account widget</div>
-    </div>
-
-    <div class="signup-form__tabs__container">
-      <ul class="signup-form__tabs">
-        <li class="signup-form__tabs__tab">
-          <a class="signup-form__tabs__tab__link" href="#">Log In</a>
-        </li>
-        <li class="signup-form__tabs__tab signup-form__tabs__tab_current">
-          <a class="signup-form__tabs__tab__link" href="#">Sign Up</a>
-        </li>
-      </ul>
-    </div>
-
     <form>
 
       <!-- Input fields -->
-      <section class="signup-form__section form-section_fields">
-        <div class="signup-form__field signup-form__field_first-name signup-form__field_focused">
+      <section class="signup-form__section signup-form__section_fields">
+        <div class="signup-form__field signup-form__field_first-name">
           <span></span>
           <input class="signup-form__field__input" type="text" name="first-name" placeholder="your first name">
         </div>
@@ -78,83 +61,7 @@
     outline: none;
   }
 
-  .signup-form {
-    border-radius: 5px;
-    box-shadow: 0 0 40px 4px #111118;
-    margin: 80px auto;
-    width: 300px;
-    background-color: #ffffff;
-  }
-
-  .signup-form__header {
-    height: 118px;
-    background: #f1f1f1;
-    padding: 11px;
-    color: #333;
-    position: relative;
-    border-radius: 5px 5px 0 0;
-    box-sizing: border-box;
-    text-align: center;
-  }
-
-  .signup-form__header__logo {
-    width: auto;
-    height: 60px;
-    display: inline-block;
-    margin: 0 0 11px;
-    vertical-align: middle;
-  }
-
-  .signup-form__header__title {
-    font-size: 22px;
-    box-sizing: initial;
-  }
-
-  .signup-form__tabs__container {
-    height: 40px;
-  }
-
-  .signup-form__tabs {
-    background: #fff;
-    padding: 0;
-    margin: 0;
-    font-size: 13px;
-    letter-spacing: 0.7px;
-    box-shadow: 0 1px 0 0 rgba(92, 102, 111, 0.2);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: stretch;
-  }
-
-  .signup-form__tabs__tab {
-    width: 50%;
-    display: block;
-    list-style: none;
-    float: left;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    cursor: pointer;
-  }
-
-  .signup-form__tabs__tab__link {
-    padding: 11px 10px;
-    display: block;
-    text-decoration: none!important;
-    color: rgba(92, 102, 111, 0.6);
-    font-weight: 500;
-  }
-
-  .signup-form__tabs__tab_current a {
-    color: #5c666f;
-  }
-
-  .form-section_fields {
+  .signup-form__section_fields {
     padding: 20px;
     box-sizing: border-box;
   }
