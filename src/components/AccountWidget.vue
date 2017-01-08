@@ -6,13 +6,13 @@
       <div class="account-widget__header-title">Vue.js account widget</div>
     </div>
 
-    <div class="account-widget__tabs-container">
+    <div class="account-widget__tabs-wrapper">
       <ul class="account-widget__tabs">
         <li class="account-widget__tab" :class="{ 'account-widget__tab_current': isActive('login-form') }">
-          <a class="account-widget__tab-link" href="#" @click="selectForm('login-form')">Log In</a>
+          <a class="account-widget__tab-link" href="#" @click="makeActive('login-form')">Log In</a>
         </li>
         <li class="account-widget__tab" :class="{ 'account-widget__tab_current': isActive('signup-form') }">
-          <a class="account-widget__tab-link" href="#" @click="selectForm('signup-form')">Sign Up</a>
+          <a class="account-widget__tab-link" href="#" @click="makeActive('signup-form')">Sign Up</a>
         </li>
       </ul>
     </div>
@@ -37,9 +37,8 @@
       };
     },
     methods: {
-      selectForm(item) {
-        // When a model is changed, the view will be automatically updated.
-        this.currentForm = item;
+      makeActive(form) {
+        this.currentForm = form;
       },
       isActive(form) {
         return this.currentForm === form;
@@ -82,7 +81,7 @@
     box-sizing: initial;
   }
 
-  .account-widget__tabs-container {
+  .account-widget__tabs-wrapper {
     height: 40px;
   }
 
@@ -122,6 +121,7 @@
     font-weight: 500;
   }
 
+  /* dynamic class */
   .account-widget__tab_current {
     box-shadow: 0 1px 0 0 #5c666f;
     cursor: default;

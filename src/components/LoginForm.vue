@@ -4,14 +4,18 @@
 
       <!-- Input fields -->
       <section class="login-form__section login-form__section_fields">
-        <div class="login-form__field login-form__field_email">
-          <span></span>
-          <input class="login-form__field-input" type="email" name="email" placeholder="your.email@example.com">
+        <div class="login-form__field-wrapper">
+          <div class="login-form__field login-form__field_email">
+            <span class="login-form__field-icon"><i class="material-icons">mail_outline</i></span>
+            <input class="login-form__field-input" type="email" name="email" placeholder="your.email@example.com">
+          </div>
         </div>
 
-        <div class="login-form__field login-form__field_password">
-          <span></span>
-          <input class="login-form__field-input" type="password" name="password" placeholder="your password">
+        <div class="login-form__field-wrapper">
+          <div class="login-form__field login-form__field_password">
+            <span class="login-form__field-icon"><i class="material-icons">lock_outline</i></span>
+            <input class="login-form__field-input" type="password" name="password" placeholder="your password">
+          </div>
         </div>
 
         <p class="login-form__forgotten-password">
@@ -21,7 +25,10 @@
 
       <!-- Actions -->
       <section class="login-form__section login-form__section_actions">
-        <button class="login-form__action login-form__action_login"><span>Log in</span></button>
+        <button class="login-form__action login-form__action_login">
+          <span class="login-form__action-label">Log in</span>
+          <i class="login-form__action-icon material-icons">keyboard_arrow_right</i>
+        </button>
       </section>
 
     </form>
@@ -40,7 +47,6 @@
   };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
   .login-form__section_fields {
@@ -54,25 +60,37 @@
     font-size: 13px;
     line-height: 1.8;
     text-align: center;
-    color: rgba(0,0,0,0.54);
+    color: rgba(0, 0, 0, 0.54);
   }
 
   .login-form__forgotten-password-link {
     font-size: 13px;
-    color: rgba(0,0,0,0.87);
+    color: rgba(0, 0, 0, 0.87);
     cursor: pointer;
     margin-bottom: 0;
     text-decoration: none;
   }
 
-  .login-form__field {
-    position: relative;
+  .login-form__field-wrapper {
     margin-bottom: 10px;
+  }
+
+  .login-form__field {
+    padding-left: 40px;
+    position: relative;
     border-radius: 3px;
     border: 1px solid #f1f1f1;
     background: #f1f1f1;
     -webkit-transition: border-color 0.8s;
     transition: border-color 0.8s;
+  }
+
+  .login-form__field-icon {
+    position: absolute;
+    font-size: 12px;
+    top: 8px;
+    left: 9px;
+    color: #888;
   }
 
   .login-form__field_focused {
@@ -96,6 +114,22 @@
     color: rgba(0, 0, 0, 0.87);
   }
 
+  .login-form__action {
+    border: 0;
+    padding: 14px;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 0 0 5px 5px;
+    transition: 0.2s ease-in-out;
+    color: #fff;
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
   .login-form__action_login {
     background-color: #EA5323;
     border: 0;
@@ -114,5 +148,16 @@
     text-transform: uppercase;
   }
 
+  .login-form__action-label {
+    height: 42px;
+    line-height: 42px;
+    vertical-align: middle;
+  }
+
+  .login-form__action-icon {
+    height: 42px;
+    line-height: 42px;
+    vertical-align: middle;
+  }
 
 </style>
