@@ -2,7 +2,8 @@
   <div class="signup-form">
 
     <div class="signup-form__header">
-      &nbsp;
+      <img class="signup-form__header__logo" src="../assets/logo.png">
+      <div class="signup-form__header__title">Vue.js account widget</div>
     </div>
 
     <div class="signup-form__tabs__container">
@@ -93,6 +94,20 @@
     position: relative;
     border-radius: 5px 5px 0 0;
     box-sizing: border-box;
+    text-align: center;
+  }
+
+  .signup-form__header__logo {
+    width: auto;
+    height: 60px;
+    display: inline-block;
+    margin: 0 0 11px;
+    vertical-align: middle;
+  }
+
+  .signup-form__header__title {
+    font-size: 22px;
+    box-sizing: initial;
   }
 
   .signup-form__tabs__container {
