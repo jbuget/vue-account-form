@@ -6,12 +6,12 @@
       <section class="login-form__section login-form__section_fields">
         <div class="login-form__field login-form__field_email">
           <span></span>
-          <input class="login-form__field__input" type="email" name="email" placeholder="your.email@example.com">
+          <input class="login-form__field-input" type="email" name="email" placeholder="your.email@example.com">
         </div>
 
         <div class="login-form__field login-form__field_password">
           <span></span>
-          <input class="login-form__field__input" type="password" name="password" placeholder="your password">
+          <input class="login-form__field-input" type="password" name="password" placeholder="your password">
         </div>
 
         <p class="login-form__forgotten-password">
@@ -21,7 +21,7 @@
 
       <!-- Actions -->
       <section class="login-form__section login-form__section_actions">
-        <button class="login-form__action login-form__action-action_login"><span>Log in</span></button>
+        <button class="login-form__action login-form__action_login"><span>Log in</span></button>
       </section>
 
     </form>
@@ -83,7 +83,7 @@
     margin-bottom: 0;
   }
 
-  .login-form__field__input {
+  .login-form__field-input {
     border: 0;
     padding: 0 14px;
     right: 0;
@@ -96,7 +96,7 @@
     color: rgba(0, 0, 0, 0.87);
   }
 
-  .login-form__action-action_login {
+  .login-form__action_login {
     background-color: #EA5323;
     border: 0;
     padding: 14px;

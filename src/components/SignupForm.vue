@@ -6,22 +6,22 @@
       <section class="signup-form__section signup-form__section_fields">
         <div class="signup-form__field signup-form__field_first-name">
           <span></span>
-          <input class="signup-form__field__input" type="text" name="first-name" placeholder="your first name">
+          <input class="signup-form__field-input" type="text" name="first-name" placeholder="your first name">
         </div>
 
         <div class="signup-form__field signup-form__field_last-name">
           <span></span>
-          <input class="signup-form__field__input" type="text" name="last-name" placeholder="your last name">
+          <input class="signup-form__field-input" type="text" name="last-name" placeholder="your last name">
         </div>
 
         <div class="signup-form__field signup-form__field_email">
           <span></span>
-          <input class="signup-form__field__input" type="email" name="email" placeholder="your.email@example.com">
+          <input class="signup-form__field-input" type="email" name="email" placeholder="your.email@example.com">
         </div>
 
         <div class="signup-form__field signup-form__field_password">
           <span></span>
-          <input class="signup-form__field__input" type="password" name="password" placeholder="your password">
+          <input class="signup-form__field-input" type="password" name="password" placeholder="your password">
         </div>
       </section>
 
@@ -33,7 +33,7 @@
 
       <!-- Actions -->
       <section class="signup-form__section signup-form__section_actions">
-        <button class="signup-form__action signup-form__action-action_signup"><span>Sign up</span></button>
+        <button class="signup-form__action signup-form__action_signup"><span>Sign up</span></button>
       </section>
 
     </form>
@@ -84,7 +84,7 @@
     margin-bottom: 0;
   }
 
-  .signup-form__field__input {
+  .signup-form__field-input {
     border: 0;
     padding: 0 14px;
     right: 0;
@@ -108,7 +108,7 @@
     position: relative;
   }
 
-  .signup-form__action-action_signup {
+  .signup-form__action_signup {
     background-color: #EA5323;
     border: 0;
     padding: 14px;

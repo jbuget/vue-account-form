@@ -2,17 +2,17 @@
   <div class="account-widget">
 
     <div class="account-widget__header">
-      <img class="account-widget__header__logo" src="../assets/logo.png">
-      <div class="account-widget__header__title">Vue.js account widget</div>
+      <img class="account-widget__header-logo" src="../assets/logo.png">
+      <div class="account-widget__header-title">Vue.js account widget</div>
     </div>
 
-    <div class="account-widget__tabs__container">
+    <div class="account-widget__tabs-container">
       <ul class="account-widget__tabs">
-        <li class="account-widget__tabs__tab" :class="{ 'account-widget__tabs__tab_current': isActive('login-form') }">
-          <a class="account-widget__tabs__tab__link" href="#" @click="selectForm('login-form')">Log In</a>
+        <li class="account-widget__tab" :class="{ 'account-widget__tab_current': isActive('login-form') }">
+          <a class="account-widget__tab-link" href="#" @click="selectForm('login-form')">Log In</a>
         </li>
-        <li class="account-widget__tabs__tab" :class="{ 'account-widget__tabs__tab_current': isActive('signup-form') }">
-          <a class="account-widget__tabs__tab__link" href="#" @click="selectForm('signup-form')">Sign Up</a>
+        <li class="account-widget__tab" :class="{ 'account-widget__tab_current': isActive('signup-form') }">
+          <a class="account-widget__tab-link" href="#" @click="selectForm('signup-form')">Sign Up</a>
         </li>
       </ul>
     </div>
@@ -69,7 +69,7 @@
     text-align: center;
   }
 
-  .account-widget__header__logo {
+  .account-widget__header-logo {
     width: auto;
     height: 60px;
     display: inline-block;
@@ -77,12 +77,12 @@
     vertical-align: middle;
   }
 
-  .account-widget__header__title {
+  .account-widget__header-title {
     font-size: 22px;
     box-sizing: initial;
   }
 
-  .account-widget__tabs__container {
+  .account-widget__tabs-container {
     height: 40px;
   }
 
@@ -103,7 +103,7 @@
     align-items: stretch;
   }
 
-  .account-widget__tabs__tab {
+  .account-widget__tab {
     width: 50%;
     display: block;
     list-style: none;
@@ -114,7 +114,7 @@
     cursor: pointer;
   }
 
-  .account-widget__tabs__tab__link {
+  .account-widget__tab-link {
     padding: 11px 10px;
     display: block;
     text-decoration: none !important;
@@ -122,12 +122,12 @@
     font-weight: 500;
   }
 
-  .account-widget__tabs__tab_current {
+  .account-widget__tab_current {
     box-shadow: 0 1px 0 0 #5c666f;
     cursor: default;
   }
 
-  .account-widget__tabs__tab_current a {
+  .account-widget__tab_current a {
     color: #5c666f;
   }
 
