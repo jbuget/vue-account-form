@@ -92,14 +92,14 @@
         if (isEmpty(this.email)) {
           this.errors.email = 'Can\'t be blank';
         } else if (!isEmailValid(this.email)) {
-          this.errors.email = 'Invalid';
+          this.errors.email = 'Must be a valid email';
         }
 
         // check password
         if (isEmpty(this.password)) {
           this.errors.password = 'Can\'t be blank';
         } else if (!isPasswordValid(this.password)) {
-          this.errors.password = 'Invalid';
+          this.errors.password = 'Must be at least 6 characters';
         }
 
         if (isEmpty(this.errors)) {
