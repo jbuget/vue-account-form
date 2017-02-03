@@ -1,20 +1,27 @@
 <template>
   <div class="login-form">
-    <form>
 
       <!-- Input fields -->
       <section class="login-form__section login-form__section_fields">
         <div class="login-form__field-wrapper">
-          <div class="login-form__field login-form__field_email">
+          <div class="login-form__field login-form__field_email" :class="{ 'login-form__field--error': hasEmailError }">
             <span class="login-form__field-icon"><i class="material-icons">mail_outline</i></span>
-            <input class="login-form__field-input" type="email" name="email" placeholder="your.email@example.com">
+            <input class="login-form__field-input"
+                   type="email"
+                   name="email"
+                   placeholder="your.email@example.com"
+                   v-model="email">
           </div>
         </div>
 
         <div class="login-form__field-wrapper">
-          <div class="login-form__field login-form__field_password">
+          <div class="login-form__field login-form__field_password" :class="{ 'login-form__field--error': hasPasswordError }">
             <span class="login-form__field-icon"><i class="material-icons">lock_outline</i></span>
-            <input class="login-form__field-input" type="password" name="password" placeholder="your password">
+            <input class="login-form__field-input"
+                   type="password"
+                   name="password"
+                   placeholder="your password"
+                   v-model="password">
           </div>
         </div>
 
@@ -25,24 +32,81 @@
 
       <!-- Actions -->
       <section class="login-form__section login-form__section_actions">
-        <button class="login-form__action login-form__action_login">
+        <button class="login-form__action login-form__action_login" @click="login">
           <span class="login-form__action-label">Log in</span>
           <i class="login-form__action-icon material-icons">keyboard_arrow_right</i>
         </button>
       </section>
 
-    </form>
   </div>
 </template>
 
 <script>
+
+  function isEmpty(object) {
+    if (typeof object === 'object') {
+      return Object.keys(object).length === 0;
+    }
+    if (typeof object === 'string') {
+      return object.length === 0;
+    }
+    throw new Error('Unknown type');
+  }
+
+  function isEmailValid(email) {
+    // eslint-disable-next-line
+    const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    return pattern.test(email);
+  }
+
+  function isPasswordValid(password) {
+    return password.length > 5;
+  }
+
   export default {
+
     name: 'login-form',
+
     data() {
       return {
         email: '',
         password: '',
+        errors: {},
       };
+    },
+
+    computed: {
+      hasEmailError() {
+        return !!this.errors.email;
+      },
+      hasPasswordError() {
+        return !!this.errors.password;
+      },
+    },
+
+    methods: {
+      login() {
+        this.errors = {};
+
+        // check email
+        if (isEmpty(this.email)) {
+          this.errors.email = 'Can\'t be blank';
+        } else if (!isEmailValid(this.email)) {
+          this.errors.email = 'Invalid';
+        }
+
+        // check password
+        if (isEmpty(this.password)) {
+          this.errors.password = 'Can\'t be blank';
+        } else if (!isPasswordValid(this.password)) {
+          this.errors.password = 'Invalid';
+        }
+
+        if (isEmpty(this.errors)) {
+          // TODO login is ok
+          console.log('YEAH!');
+        }
+      },
     },
   };
 </script>
@@ -85,16 +149,20 @@
     transition: border-color 0.8s;
   }
 
+  .login-form__field--focused {
+    border-color: #a0a0a0;
+  }
+
+  .login-form__field--error {
+    border-color: red;
+  }
+
   .login-form__field-icon {
     position: absolute;
     font-size: 12px;
     top: 8px;
     left: 9px;
     color: #888;
-  }
-
-  .login-form__field_focused {
-    border-color: #a0a0a0;
   }
 
   .login-form__field_password {
